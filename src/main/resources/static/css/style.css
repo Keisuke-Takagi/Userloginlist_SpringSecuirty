@@ -1,0 +1,259 @@
+.navbar-brand{
+  color: red;
+}
+p{
+	margin-top: 0.5rem!important;
+    margin-bottom: 0.5rem!important;
+}
+form{
+  padding: 0 20px;
+}
+a {
+  text-decoration: none;
+  }
+button{
+  margin: 10px 0;
+}
+a:hover{
+  text-decoration: none!important;
+}
+#header{l
+	width: 100%;
+}
+.error{
+  color: red !important;
+  text-decoration: none;
+  font-size: 23px;
+}
+.navbar-header{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.navbar-brand{
+  float: right;
+  color: blue !important;
+  display: inline!important;
+    line-height: 58px!important;
+    text-align: center!important;
+    padding:0!important;
+}
+.app-icons{
+	border: solid 0.5px;
+    background: lightgray;
+    border-radius: 8px;
+    height: 60px;
+}
+.login-icon {
+	height: 100%;
+	width:100%;
+	line-height: 20px;
+}
+
+.card{
+	width: fit-content;
+}
+
+#user-login-icon{
+  color: gray;
+  float: left;
+}
+.login-text{
+  float: right;
+
+}
+
+#logout_form{
+	height: 100%;
+	padding:0!important;
+}
+
+.logout_button{
+display: contents;
+}
+.logout_text{
+	padding: 10px 0;
+    font-weight: 600;
+    color: blue;
+}
+.container-fluid{
+	height: 100%;
+}
+.contents_wrapper{
+  min-height: 100vh;
+  position: relative;/*←相対位置*/
+  padding-bottom: 120px;
+  box-sizing: border-box;
+}
+.main{
+  width: 100vw;
+  min-height: 300px;
+  padding: 13px;
+  margin-bottom:120px ;
+}
+
+
+.form-input{
+  border: solid 1px black;
+  display: block;
+}
+.destroy_button_box{
+  display: inline-block;
+}
+.edit_button_box{
+  display: inline-block;
+
+}
+.file_upload_button{
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 7px 10px 10px 10px;
+  text-decoration: none;
+  color: #FFF;
+  background: #a180dc;
+  transition: .4s;
+}
+footer{
+  clear: both;
+    font-size: 85%;
+    color: #fff;
+    display: block;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    display: contents!important;
+}
+ul{
+  display: block;
+  float: left;
+  list-style: none;
+  margin: 3 auto;
+  padding: 0 10px;
+  width: 210px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 3px;
+}
+li{
+  display: list-item;
+  color: gray;
+  z-index: 100;
+}
+a{
+}
+label{
+  margin-top: 3em;
+}
+#footermenu{
+  height: 120px;
+  width: 100vw;
+  display: block;
+  background-color: black;
+  margin: 0 auto;
+  float: left;
+  left: 0%;
+}
+.title{
+  font-weight: bold;
+  color: yellowgreen;
+}
+.header_registration{
+  cursor: pointer;
+  	padding: 10px 0;
+    font-weight: 600;
+    color: blue;
+    height: 100%;
+    line-height: 58px;
+    display: inline;
+}
+.footer-link{
+  color: white;
+}
+.footer-link:hover{
+  color: white;
+  text-decoration: underline;
+}
+.edit-book-form{
+}
+.form_book_description{
+  width: 370px;
+  border: solid 1px black;
+  display: block;
+}
+.book-edit-box__title{
+
+}
+
+#user_create_button{
+	margin-top: 20px;
+    width: 130px;
+}
+.header_right{
+	float: right;
+	paddig: 10px 0;
+	    height: 100%;
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+
+  white-space: nowrap;
+}
+.table-responsive{
+  width: 100%;
+  overflow-x: scroll;
+  width: 98%;
+  padding: 10px;
+}
+.contents_main{
+  padding: 20px 0;
+  width: 100%;
+  display: contents;
+}
+.book_new_label{
+  display: contents;
+}
+.book-new-box{
+  padding: 10px 0;
+}
+.book_new_title{
+  padding: 0 0 0 20px;
+}
+.menu-flex-box{
+  flex-flow: row-reverse;
+  list-style: none;
+  padding: 0;
+  vertical-align: middle!important;
+}
+.header_logout{
+  color: #428bca;
+  text-decoration: none;
+  cursor:pointer;
+}
+.link_user_index{
+  color: #428bca;
+  text-decoration: none;
+  cursor:pointer;
+  display: block;
+  float: left;
+}
+.header_login{
+  cursor: pointer;
+
+    padding: 10px 0;
+    font-weight: 600;
+    color: blue;
+    display: inline;
+    text-align: center;
+    line-height: 58px;
+}
+tbody {
+	overflow-y: scroll;
+}
+
+.page_title {
+	display: inline;
+	padding: 0 20px;
+}

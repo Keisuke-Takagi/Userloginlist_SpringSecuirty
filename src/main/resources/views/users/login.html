@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+
+<div layout:fragment="content">
+	<header id='header'>
+		<div class='app-icons'>
+			<div class='container-fluid'>
+				<div class='navbar-header'>
+					<a class='navbar-brand' href='/bookapp/users/index/registration'
+						style="padding-top: 0.6rem;">READ-BOOK-RECORDER</a>
+					<div class='login-icon'>
+						<i class='fa fa-user' id='user-login-icon' aria-hidden='true'></i>
+						<div class="header_right">
+							<a class="header_registration"
+								href="http://localhost:8080/registration">新規登録</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="contents_main">
+		<div class='main'>
+			<div class="json_main">
+				<h1 class="page_title">ログイン</h1>
+				<div class="error_box">
+					<h3 class="error" th:text="${error_msg}">ここに挿入</h3>
+				</div>
+				<div class="error_box">
+					<!-- Thymeleafで\nでスピリット後each文でエラーの改行表示 -->
+					<th:block th:if="${result}">
+						<th:block th:each="line: ${result.split('\r\n|\r|\n', -1)}">
+							<h3 class="error" th:text="${line}">ここに挿入</h3>
+				</div>
+
+				<!-- securityの例外SESSIONでのエラー表示 -->
+				<!--  				<div th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null">
+
+					<div
+						th:if="${session['SPRING_SECURITY_LAST_EXCEPTION'].message} == 'Bad credentials'">
+						<p>メールアドレスまたはパスワードが違います(sessionからの表示)<p>
+					</div>
+					<div
+						th:if="${session['SPRING_SECURITY_LAST_EXCEPTION'].message} == 'UserDetailsService returned null, which is an interface contract violation'">
+						<h3 class="error">メールアドレスまたはパスワードが違います(sessionからの表示)</h3>
+					</div>
+				</div> -->
+
+				<form method='post' id='new-user-form' th:object="${userfrom}"  th:action="@{/login}">
+					<p>メールアドレス(必須)</p>
+					<input type='text' name='username' th:value="${username}" class='form-input'>
+
+					<p>パスワード(必須)</p>
+					<input type='text' name='password' minlength="5" maxlength="10"  placeholder="最大10文字" value="" class='form-input'>
+
+					<input id='user_create_button' type="submit" value="ログイン"class='btn btn-success btn-lg'>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

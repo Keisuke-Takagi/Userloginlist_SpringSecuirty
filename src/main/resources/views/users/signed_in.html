@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+
+<div layout:fragment="content">
+	<header id='header'>
+		<div class='app-icons'>
+			<div class='container-fluid'>
+				<div class='navbar-header'>
+					<a class='navbar-brand' href='/bookapp/users/index/registration'
+						style="padding-top: 0.6rem;">READ-BOOK-RECORDER</a>
+					<div class='login-icon'>
+						<i class='fa fa-user' id='user-login-icon' aria-hidden='true'></i>
+						<div class="header_right">
+							<form method='post' id='logout_form' th:action="@{/logout}">
+								<button type="submit" class="logout_button">
+									<p class="logout_text">ログアウト</p>
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<h1>登録完了</h1>
+	<a class="link_user_list_page" href="../list">ユーザー一覧へ </a>
+</div>

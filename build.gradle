@@ -1,0 +1,69 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+	//Lombokのためにwarを定義
+    id 'war'
+}
+  def defaultEncoding = 'UTF-8'
+  tasks.withType(AbstractCompile) each { it.options.encoding = defaultEncoding }
+
+  compileTestJava {
+      options.encoding = defaultEncoding
+  }
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-web-services'
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+    //ログイン認証に使う
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	compile "org.thymeleaf.extras:thymeleaf-extras-springsecurity5"
+    compile "org.modelmapper:modelmapper:0.7.5"
+   //LOmbokを入れる
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'mysql:mysql-connector-java'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+
+    //jpaの導入
+   compile('org.springframework.boot:spring-boot-starter-data-jpa')
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	compile('org.springframework.boot:spring-boot-starter-validation')
+
+	//THymeleaf layoutdialectの使用
+	compile "org.thymeleaf:thymeleaf:3.0.9.RELEASE"
+    compile "org.thymeleaf:thymeleaf-spring4:3.0.9.RELEASE"
+    compile('nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.3.0')
+}
+
+test {
+	useJUnitPlatform()
+}
+
+
